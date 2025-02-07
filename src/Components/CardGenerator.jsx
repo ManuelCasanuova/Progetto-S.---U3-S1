@@ -8,7 +8,7 @@ class CardGenerator extends Component {
   };
 
   fetchFilms = () => {
-    fetch("http://www.omdbapi.com/?apikey=1cf214e3&s=Batman")
+    fetch(`http://www.omdbapi.com/?apikey=1cf214e3&s=${this.props.saga}`)
       .then((resp) => {
         if (resp.ok) {
           return resp.json();
