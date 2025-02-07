@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 
 class SezioneFilm1 extends Component {
   state = {
-    films: [],
+    RemoteFilms: [],
   };
 
   fetchFilms = () => {
