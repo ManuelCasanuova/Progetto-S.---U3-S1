@@ -10,6 +10,8 @@ const GridGenerator = () => {
       <CardGenerator saga="Batman" />
       {/*<CardGenerator saga="Terminator" /> */}
       {/*<CardGenerator saga="Avenger" /> */}
+      {/*<CardGenerator saga="Avenger" /> */}
+      {/*<CardGenerator saga="Avenger" /> */}
     </Container>
   );
 };
