@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 import SingleFilm from "./SingleFilm";
 
 class CardGenerator extends Component {
@@ -33,11 +33,11 @@ class CardGenerator extends Component {
   render() {
     console.log("RENDER");
     return (
-      <Col>
+      <Row xs={1} sm={2} md={4} xl={5} xxl={6} className="mt-4">
         {this.state.RemoteFilms.map((film) => {
           return <SingleFilm key={film.imdbID} film={film} />;
         })}
-      </Col>
+      </Row>
     );
   }
 }
