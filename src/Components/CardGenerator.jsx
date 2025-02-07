@@ -1,8 +1,8 @@
 import { Component } from "react";
-import { Container, Row } from "react-bootstrap";
-import SingleFilm from "./Components/SingleFilm";
+import { Col, Container, Row } from "react-bootstrap";
+import SingleFilm from "./SingleFilm";
 
-class SezioneFilm1 extends Component {
+class CardGenerator extends Component {
   state = {
     RemoteFilms: [],
   };
@@ -33,15 +33,13 @@ class SezioneFilm1 extends Component {
   render() {
     console.log("RENDER");
     return (
-      <Container>
-        <Row xs={1} sm={2} md={4} xl={5} xxl={6} className="mt-4">
-          {this.state.RemoteFilms.map((film) => {
-            return <SingleFilm key={film.imdbID} film={film} />;
-          })}
-        </Row>
-      </Container>
+      <Col>
+        {this.state.RemoteFilms.map((film) => {
+          return <SingleFilm key={film.imdbID} film={film} />;
+        })}
+      </Col>
     );
   }
 }
 
-export default SezioneFilm1;
+export default CardGenerator;
