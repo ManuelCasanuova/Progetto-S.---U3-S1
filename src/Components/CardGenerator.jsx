@@ -34,8 +34,8 @@ class CardGenerator extends Component {
     console.log("RENDER");
     return (
       <>
-        <h4>{this.props.saga.replace(/\+/g, " ")}</h4>
-        <Row xs={1} sm={2} md={6} className="mt-4">
+        <h4 className="my-2">{this.props.saga.replace(/\+/g, " ")}</h4>
+        <Row xs={1} sm={2} md={6} className=" g-4">
           {this.state.RemoteFilms.slice(0, 6).map((film) => {
             return <SingleFilm key={film.imdbID} film={film} />;
           })}

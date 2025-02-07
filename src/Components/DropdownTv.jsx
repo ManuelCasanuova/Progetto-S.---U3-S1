@@ -3,11 +3,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 function DropdownTv() {
   return (
     <Dropdown className="ms-4 mt-1">
-      <Dropdown.Toggle
-        variant="secondary"
-        id="dropdown-basic"
-        className="btn btn-secondary btn-sm dropdown-toggle rounded-0 bg-black"
-      >
+      <Dropdown.Toggle id="dropdown-basic" className="btn btn-secondary btn-sm dropdown-toggle rounded-0">
         Genres
       </Dropdown.Toggle>
 
