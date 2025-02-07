@@ -1,5 +1,6 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
 import Logo from "./Logo";
+import { Search, Bell, PersonCircle } from "react-bootstrap-icons";
 
 const CustomNavBar = () => (
   <Navbar expand="lg" className="bg-body-tertiary mb-3" bg="dark" data-bs-theme="dark">
@@ -17,9 +18,19 @@ const CustomNavBar = () => (
           <Nav.Link href="#">My List</Nav.Link>
         </Nav>
         <Nav className="ms-auto">
-          <Nav.Link href="#">KIDS</Nav.Link>
+          <Nav.Link href="#">
+            <Search className="icons" />
+          </Nav.Link>
+          <Nav.Link id="kids" href="#">
+            KIDS
+          </Nav.Link>
+          <Nav.Link href="#">
+            <Bell className="icons" />
+          </Nav.Link>
 
-          <Nav.Link href="#">My List</Nav.Link>
+          <Nav.Link href="#">
+            <PersonCircle className="icons" />
+          </Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Container>
