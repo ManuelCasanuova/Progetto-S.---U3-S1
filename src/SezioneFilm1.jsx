@@ -17,6 +17,7 @@ class SezioneFilm1 extends Component {
       })
       .then((data) => {
         console.log(data);
+        this.setState({ RemoteFilms: data.Search });
       })
       .catch((e) => {
         console.log("errore", e);
