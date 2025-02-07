@@ -15,11 +15,11 @@ class CardGenerator extends Component {
         if (resp.ok) {
           return resp.json();
         } else {
-          throw new Error("errore nella chiamata");
+          throw new Error("Errore nella chiamata");
         }
       })
       .then((films) => {
-        console.log(films);
+        //console.log(films);
         this.setState({ remoteFilms: films.Search, caricamento: false });
       })
       .catch((e) => {
@@ -29,16 +29,18 @@ class CardGenerator extends Component {
   };
 
   componentDidMount() {
-    console.log("componentDidMount()");
+    //console.log("componentDidMount()");
     this.fetchFilms();
   }
 
   render() {
-    console.log("RENDER");
+    //console.log("RENDER");
     return (
       <>
         <h4 className="my-2">{this.props.saga.replace(/\+/g, " ")}</h4>
         {this.state.caricamento && (
+          //Inserito qui lo spinner per ogni griglia che si andrà a creare
+
           <Spinner animation="grow" role="status" variant="danger" className="d-block mx-auto">
             <span className="visually-hidden">Loading...</span>
           </Spinner>
