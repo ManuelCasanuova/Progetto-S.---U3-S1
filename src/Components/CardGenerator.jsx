@@ -4,12 +4,12 @@ import SingleFilm from "./SingleFilm";
 
 class CardGenerator extends Component {
   state = {
-    RemoteFilms: [],
-    Caricamento: false,
+    remoteFilms: [],
+    caricamento: false,
   };
 
   fetchFilms = () => {
-    this.setState({ Caricamento: true });
+    this.setState({ caricamento: true });
     fetch(`http://www.omdbapi.com/?apikey=1cf214e3&s=${this.props.saga}`)
       .then((resp) => {
         if (resp.ok) {
@@ -20,11 +20,11 @@ class CardGenerator extends Component {
       })
       .then((films) => {
         console.log(films);
-        this.setState({ RemoteFilms: films.Search, Caricamento: false });
+        this.setState({ remoteFilms: films.Search, caricamento: false });
       })
       .catch((e) => {
         console.log("errore", e);
-        this.setState({ Caricamento: false });
+        this.setState({ caricamento: false });
       });
   };
 
@@ -38,13 +38,13 @@ class CardGenerator extends Component {
     return (
       <>
         <h4 className="my-2">{this.props.saga.replace(/\+/g, " ")}</h4>
-        {this.state.Caricamento && (
+        {this.state.caricamento && (
           <Spinner animation="grow" role="status" variant="danger" className="d-block mx-auto">
             <span className="visually-hidden">Loading...</span>
           </Spinner>
         )}
         <Row xs={1} sm={2} md={6} className=" g-4">
-          {this.state.RemoteFilms.slice(0, 6).map((film) => {
+          {this.state.remoteFilms.slice(0, 6).map((film) => {
             return <SingleFilm key={film.imdbID} film={film} />;
           })}
         </Row>
